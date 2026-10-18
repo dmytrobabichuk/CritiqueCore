@@ -1,4 +1,43 @@
-body {
-  margin: 24px;
+:root {
   font-family: Arial, sans-serif;
+  color: #1b2739;
+  background: #f5f6fa;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --accent: #6550d7;
+  --muted: #5e718e;
+  --border: #d8e0ed;
+  --soft: #f0ecfc;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-width: 320px;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+}
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #a99bec;
+  outline-offset: 3px;
+}
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+button {
+  color: inherit;
 }

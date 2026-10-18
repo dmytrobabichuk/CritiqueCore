@@ -1,0 +1,133 @@
+.button,
+.secondaryButton {
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 13px 24px;
+  min-height: 44px;
+  font-size: 14px;
+  line-height: 1.2;
+}
+.button {
+  background: var(--accent);
+  color: #fff;
+}
+.button:hover {
+  background: #5441bd;
+}
+.secondaryButton {
+  background: #fff;
+  border-color: var(--border);
+}
+.secondaryButton:hover {
+  background: #f5f6fa;
+}
+.panel,
+.topicCard {
+  border: 1px solid var(--border);
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+}
+.panelTitle {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.panel p,
+.topicCard p {
+  line-height: 1.6;
+}
+.topicCard {
+  padding: 20px;
+}
+.topicCard h2 {
+  font-size: 18px;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+.topicCard p {
+  color: var(--muted);
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+.topicCard .meta {
+  font-size: 13px;
+  margin-bottom: 14px;
+}
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  color: var(--accent);
+  font-size: 12px;
+}
+.status {
+  color: #276641;
+}
+.field {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.field label {
+  font-size: 14px;
+}
+.field input,
+.field select,
+.field textarea {
+  min-width: 0;
+  width: 100%;
+  padding: 14px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+  color: #1b2739;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.field textarea {
+  resize: vertical;
+  min-height: 124px;
+}
+.field small {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.codeBlock {
+  border-radius: 12px;
+  background: #101d30;
+  color: #e0e7f2;
+  padding: 20px 16px;
+  overflow: hidden;
+}
+.codeHeading {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  font:
+    12px/1.5 Consolas,
+    monospace;
+  color: #9aadc5;
+  margin-bottom: 24px;
+}
+.codeBlock pre {
+  margin: 0;
+  overflow-x: auto;
+  font:
+    13px/1.8 Consolas,
+    monospace;
+  tab-size: 2;
+}
+@media (max-width: 760px) {
+  .panel,
+  .topicCard {
+    padding: 18px;
+  }
+  .button,
+  .secondaryButton {
+    padding: 12px 18px;
+  }
+  .codeHeading {
+    font-size: 11px;
+  }
+}
