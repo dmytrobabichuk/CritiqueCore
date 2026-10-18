@@ -1,7 +1,7 @@
 describe('Запуск застосунку', () => {
-  it('відкриває стартовий екран', () => {
+  it('відкриває стрічку обговорень', () => {
     cy.visit('/');
-    cy.get('h1').should('have.text', 'CritiqueCore');
-    cy.contains('Каркас навчального проєкту.').should('be.visible');
+    cy.get('h1').should('have.text', 'Обговорення');
+    cy.contains('Спочатку контекст. Потім — код.').should('be.visible');
   });
 });

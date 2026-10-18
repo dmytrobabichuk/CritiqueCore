@@ -1,54 +1,51 @@
 # CritiqueCore
 
 Навчальна платформа для обговорення коду та Code Review.
-Автор: Дмитро Бабічук, УжНУ.
 
-## Лабораторна робота 3
+## Лабораторна робота 4
 
-Підготовлено каркас React + Vite, структуру папок, ESLint, Prettier,
-Git hooks через Husky та конфігурацію Cypress.
-Стартовий екран показує назву проєкту. Два початкові тести перевіряють
-компонент заголовка та відкриття застосунку.
+Статична верстка шести екранів на React із CSS Modules.
+Без CSS-фреймворків, маршрутизатора, API та бізнес-логіки.
+Кнопки відтворюють дизайн; форми не надсилають дані.
 
 ## Запуск
 
-Потрібні Node.js 22.12+ і Git. Для нової копії:
+Потрібні Node.js 22.12+ та Git.
 
 ```sh
 npm ci
 npm run dev
 ```
 
-Відкрити адресу, яку виведе Vite, зазвичай http://localhost:5173.
-Якщо папка ще не є Git-репозиторієм, для активації hooks спочатку
-виконати `git init`, потім `npm run prepare`.
+За стандартного порту Vite окремі екрани доступні за адресами:
 
-## Перевірки
+- http://localhost:5174/ — стрічка.
+- http://localhost:5174/create.html — створення теми.
+- http://localhost:5174/discussion.html — обговорення.
+- http://localhost:5174/review.html — Code Review.
+- http://localhost:5174/login.html — вхід.
+- http://localhost:5174/register.html — реєстрація.
 
-- `npm run lint` — ESLint.
-- `npm run format:check` — форматування Prettier.
-- `npm run build` — збірка Vite.
-- `npm run test:unit` — початкова компонентна перевірка Cypress.
-- `npm run test:e2e` — початкова перевірка запуску в браузері.
-- `npm run check` — ESLint, Prettier і збірка.
-
-Husky перед commit перевіряє ESLint і форматування, перед push — збірку.
+Це окремі HTML-входи для перегляду верстки. React Router і переходи
+між сторінками додаються в ЛР5.
 
 ## Структура
 
-- `src/components` — окремі компоненти.
-- `src/pages` — компоненти сторінок; зараз StartPage.
-- `src/App.jsx` — кореневий компонент.
-- `src/main.jsx` — підключення React до HTML.
-- `cypress/component` — початковий компонентний тест.
-- `cypress/e2e` — початковий тест відкриття застосунку.
-- `.husky` — Git hooks.
+- src/pages — сторінки інтерфейсу.
+- src/components — спільна оболонка, кнопка, поле, панель, картка та блок коду.
+- Файли *.module.css — локальні стилі компонентів і сторінок.
+- src/index.css — базове скидання, шрифт і CSS-змінні.
+- cypress — початкові перевірки з попереднього етапу.
+- .husky — перевірки перед commit та push.
 
-## Наступні етапи
+## Команди
 
-ЛР4 — верстка сторінок і CSS Modules. ЛР5 — маршрутизація.
-ЛР6 — бізнес-логіка й запити. ЛР7 — Node.js/Express API.
-ЛР8–9 — розширення компонентних та E2E тестів.
+- npm run lint — статичний аналіз.
+- npm run format — форматування.
+- npm run format:check — перевірка форматування.
+- npm run build — збірка всіх HTML-переглядів.
+- npm run test:unit — початковий компонентний тест.
+- npm run test:e2e — початковий E2E тест.
 
-Дизайн попередньої роботи:
+Макет у Figma:
 https://www.figma.com/design/LaCWRcrv2twn3XYfTfO8rZ/CritiqueCore_Web_Platform_UI_v1.0
