@@ -15,7 +15,7 @@ export default function HomePage() {
             Запитуй, ділися рішеннями та допомагай покращувати навчальний код.
           </p>
         </div>
-        <Button>+ Створити тему</Button>
+        <Button to="/create">+ Створити тему</Button>
       </div>
       <div className={styles.tabs}>
         <button type="button" className={styles.selected}>
@@ -43,6 +43,7 @@ export default function HomePage() {
             description="Як зберегти тему оформлення та уникнути розбіжності HTML після завантаження?"
             tags="#react #nextjs #hydration"
             status="9 відповідей · Вирішено"
+            to="/discussion"
           />
           <TopicCard
             author="Тарас Васильчук · Студент · 4 год тому"
@@ -50,6 +51,7 @@ export default function HomePage() {
             description="Перевіряю middleware авторизації. Потрібен відгук щодо помилок і структури коду."
             tags="#nodejs #jwt #security"
             status="3 коментарі · Потребує змін"
+            to="/review"
           />
           <TopicCard
             author="Максим Гриценко · Викладач · учора"
@@ -66,7 +68,9 @@ export default function HomePage() {
         <aside className={styles.stack}>
           <Panel title="Твоя наступна тема">
             <p className={styles.muted}>Знайди відповідь у пошуку або опиши проблему спільноті.</p>
-            <Button secondary>Поставити запитання</Button>
+            <Button secondary to="/create">
+              Поставити запитання
+            </Button>
           </Panel>
           <Panel title="Популярні теги">
             <ul className={styles.plainList}>

@@ -41,7 +41,9 @@ export default function RegisterPage() {
       </form>
       <hr className={styles.divider} />
       <p className={styles.switchText}>Уже маєш акаунт?</p>
-      <Button secondary>Перейти до входу</Button>
+      <Button secondary to="/login">
+        Перейти до входу
+      </Button>
     </AuthLayout>
   );
 }
