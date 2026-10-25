@@ -132,3 +132,11 @@
     font-size: 28px;
   }
 }
+
+.brand {
+  color: #fff;
+  text-decoration: none;
+}
+.formContent > a {
+  width: 100%;
+}

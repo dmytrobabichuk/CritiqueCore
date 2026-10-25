@@ -1,12 +1,13 @@
+import { Link, NavLink } from 'react-router';
 import styles from './AppShell.module.css';
 
-export default function AppShell({ children, breadcrumb, review = false }) {
+export default function AppShell({ children, breadcrumb }) {
   return (
     <div className={styles.shell}>
       <header className={styles.header}>
-        <div className={styles.brand}>
+        <Link to="/" className={styles.brand}>
           <span aria-hidden="true">{'</>'}</span>CritiqueCore
-        </div>
+        </Link>
         <p className={styles.breadcrumb}>Спільнота / {breadcrumb}</p>
         <label className={styles.search}>
           <span className={styles.srOnly}>Пошук у спільноті</span>
@@ -15,24 +16,22 @@ export default function AppShell({ children, breadcrumb, review = false }) {
         <button type="button" className={styles.notifications}>
           Сповіщення · 2
         </button>
+        <Link to="/login" className={styles.loginLink}>
+          Вхід
+        </Link>
       </header>
       <aside className={styles.sidebar}>
         <p className={styles.sectionLabel}>СПІЛЬНОТА</p>
         <nav className={styles.navigation} aria-label="Розділи спільноти">
-          <button
-            type="button"
-            aria-current={!review ? 'page' : undefined}
-            className={!review ? styles.active : undefined}
-          >
+          <NavLink to="/" end className={({ isActive }) => (isActive ? styles.active : undefined)}>
             01 Усі обговорення
-          </button>
-          <button
-            type="button"
-            aria-current={review ? 'page' : undefined}
-            className={review ? styles.active : undefined}
+          </NavLink>
+          <NavLink
+            to="/review"
+            className={({ isActive }) => (isActive ? styles.active : undefined)}
           >
             02 Code Review
-          </button>
+          </NavLink>
           <button type="button">03 Збережене</button>
           <button type="button">04 Оголошення</button>
         </nav>

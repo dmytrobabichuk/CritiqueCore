@@ -1,12 +1,13 @@
+import { Link } from 'react-router';
 import styles from './AuthLayout.module.css';
 
 export default function AuthLayout({ children }) {
   return (
     <main className={styles.layout}>
       <section className={styles.intro}>
-        <div className={styles.brand}>
+        <Link to="/" className={styles.brand}>
           <span aria-hidden="true">{'</>'}</span>CritiqueCore
-        </div>
+        </Link>
         <div className={styles.message}>
           <p className={styles.eyebrow}>СПІЛЬНОТА ДЛЯ НАВЧАЛЬНОГО КОДУ</p>
           <h2>

@@ -6,7 +6,7 @@ import styles from './Pages.module.css';
 
 export default function CodeReviewPage() {
   return (
-    <AppShell breadcrumb="Code Review / Обговорення" review>
+    <AppShell breadcrumb="Code Review / Обговорення">
       <div className={styles.pageHeading}>
         <div className={styles.badgeRow}>
           <span className={styles.badge}>Code Review</span>

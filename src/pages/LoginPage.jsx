@@ -41,7 +41,9 @@ export default function LoginPage() {
       </form>
       <hr className={styles.divider} />
       <p className={styles.switchText}>Ще не маєш акаунта?</p>
-      <Button secondary>Зареєструватися</Button>
+      <Button secondary to="/register">
+        Зареєструватися
+      </Button>
     </AuthLayout>
   );
 }
