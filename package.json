@@ -15,7 +15,8 @@
     "test:e2e:run": "cypress run --e2e --browser electron",
     "test:e2e": "start-server-and-test dev:test http://127.0.0.1:5173 test:e2e:run",
     "dev:test": "vite --host 127.0.0.1 --port 5173 --strictPort",
-    "check": "npm run lint && npm run format:check && npm run build"
+    "check": "npm run lint && npm run format:check && npm run build",
+    "api:dev": "node tools/dev-api.mjs"
   },
   "dependencies": {
     "react": "^19.2.8",
