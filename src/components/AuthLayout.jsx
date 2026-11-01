@@ -9,27 +9,16 @@ export default function AuthLayout({ children }) {
           <span aria-hidden="true">{'</>'}</span>CritiqueCore
         </Link>
         <div className={styles.message}>
-          <p className={styles.eyebrow}>СПІЛЬНОТА ДЛЯ НАВЧАЛЬНОГО КОДУ</p>
+          <p className={styles.eyebrow}>�ϲ������ ��� ����������� ����</p>
           <h2>
-            Хороший код
+            ������� ���
             <br />
-            починається
-            <br />з обговорення.
+            ����������
+            <br />� �����������.
           </h2>
-          <p>Збирай запитання, знаходь рішення та отримуй зрозумілий відгук до кожного рядка.</p>
-          <div className={styles.example}>
-            <small>ThemeProvider.jsx Вирішено</small>
-            <pre>{'useEffect(() => {\n  setTheme(readSavedTheme());\n}, []);'}</pre>
-            <hr />
-            <strong>Богдан · Ментор</strong>
-            <p>
-              Тепер початковий рендер узгоджений.
-              <br />
-              Дякую за короткий приклад!
-            </p>
-          </div>
+          <p>������ ���������, ������� ������ �� ������� ��������� ����� �� ������� �����.</p>
         </div>
-        <small className={styles.footer}>Для студентів, менторів і викладачів.</small>
+        <small className={styles.footer}>��� ��������, ������� � ����������.</small>
       </section>
       <section className={styles.formArea}>
         <div className={styles.formContent}>{children}</div>
