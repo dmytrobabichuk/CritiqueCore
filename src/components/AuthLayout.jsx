@@ -9,16 +9,16 @@ export default function AuthLayout({ children }) {
           <span aria-hidden="true">{'</>'}</span>CritiqueCore
         </Link>
         <div className={styles.message}>
-          <p className={styles.eyebrow}>�ϲ������ ��� ����������� ����</p>
+          <p className={styles.eyebrow}>СПІЛЬНОТА ДЛЯ НАВЧАЛЬНОГО КОДУ</p>
           <h2>
-            ������� ���
+            Хороший код
             <br />
-            ����������
-            <br />� �����������.
+            починається
+            <br />з обговорення.
           </h2>
-          <p>������ ���������, ������� ������ �� ������� ��������� ����� �� ������� �����.</p>
+          <p>Збирай запитання, знаходь рішення та отримуй зрозумілий відгук до кожного рядка.</p>
         </div>
-        <small className={styles.footer}>��� ��������, ������� � ����������.</small>
+        <small className={styles.footer}>Для студентів, менторів і викладачів.</small>
       </section>
       <section className={styles.formArea}>
         <div className={styles.formContent}>{children}</div>

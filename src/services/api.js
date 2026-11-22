@@ -7,6 +7,6 @@ export async function request(path, { body, ...options } = {}) {
     ...(body ? { body: JSON.stringify(body) } : {}),
   });
   const data = await response.json();
-  if (!response.ok) throw new Error(data.message || `������� HTTP ${response.status}`);
+  if (!response.ok) throw new Error(data.message || `Помилка HTTP ${response.status}`);
   return data;
 }

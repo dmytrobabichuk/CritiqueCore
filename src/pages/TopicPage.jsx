@@ -20,7 +20,7 @@ export default function TopicPage() {
       form.reset();
       resource.reload();
     } catch {
-      /* ����������� �������� � ���������. */
+      /* Повідомлення показано в інтерфейсі. */
     }
   }
   async function resolve() {
@@ -28,32 +28,32 @@ export default function TopicPage() {
       await mutation.send(`/topics/${id}/resolve`, {});
       resource.reload();
     } catch {
-      /* ����������� �������� � ���������. */
+      /* Повідомлення показано в інтерфейсі. */
     }
   }
   const topic = resource.data;
   return (
-    <AppShell breadcrumb="�����������">
-      {resource.loading && <p role="status">�������������</p>}
+    <AppShell breadcrumb="Обговорення">
+      {resource.loading && <p role="status">Завантаження…</p>}
       {resource.error && <p role="alert">{resource.error}</p>}
       {topic && (
         <>
           <h1>{topic.title}</h1>
           <p>
-            {topic.author.name} � {new Date(topic.createdAt).toLocaleString('uk-UA')} �{' '}
-            {topic.resolved ? '�������' : '�����������'}
+            {topic.author.name} · {new Date(topic.createdAt).toLocaleString('uk-UA')} ·{' '}
+            {topic.resolved ? 'Вирішено' : 'Обговорення'}
           </p>
           <Panel>
             <p style={{ whiteSpace: 'pre-wrap' }}>{topic.body}</p>
-            {topic.code && <CodeBlock filename="��� ������">{topic.code}</CodeBlock>}
-            <p>{topic.tags.join(' � ')}</p>
+            {topic.code && <CodeBlock filename="Код автора">{topic.code}</CodeBlock>}
+            <p>{topic.tags.join(' · ')}</p>
             {auth.user?.id === topic.author.id && !topic.resolved && (
               <Button onClick={resolve} disabled={mutation.pending}>
-                ��������� ��������
+                Позначити вирішеною
               </Button>
             )}
           </Panel>
-          <h2>³����� � {topic.comments.length}</h2>
+          <h2>Відповіді · {topic.comments.length}</h2>
           {topic.comments.map((item) => (
             <Panel key={item.id} title={item.author.name}>
               <p style={{ whiteSpace: 'pre-wrap' }}>{item.body}</p>
@@ -62,16 +62,16 @@ export default function TopicPage() {
           {auth.user ? (
             <Panel>
               <form onSubmit={comment}>
-                <Field id="comment" label="���� �������">
+                <Field id="comment" label="Твоя відповідь">
                   <textarea id="comment" name="body" required maxLength={5000} />
                 </Field>
                 <Button type="submit" disabled={mutation.pending}>
-                  �������� �������
+                  Надіслати відповідь
                 </Button>
               </form>
             </Panel>
           ) : (
-            <Button to="/login">�����, ��� ��������</Button>
+            <Button to="/login">Увійди, щоб відповісти</Button>
           )}
           {mutation.error && <p role="alert">{mutation.error}</p>}
         </>

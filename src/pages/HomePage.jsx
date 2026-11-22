@@ -12,10 +12,10 @@ export default function HomePage({ review = false }) {
     `/topics?${new URLSearchParams({ q, type: review ? 'review' : '' })}`,
   );
   return (
-    <AppShell breadcrumb={review ? 'Code Review' : '�����������'}>
+    <AppShell breadcrumb={review ? 'Code Review' : 'Обговорення'}>
       <div className={styles.pageHeading}>
-        <h1>{review ? 'Code Review' : '�����������'}</h1>
-        <Button to="/create">�������� ����</Button>
+        <h1>{review ? 'Code Review' : 'Обговорення'}</h1>
+        <Button to="/create">Створити тему</Button>
       </div>
       <form
         onSubmit={(e) => {
@@ -25,22 +25,22 @@ export default function HomePage({ review = false }) {
       >
         <input
           name="q"
-          aria-label="����� ���"
+          aria-label="Пошук тем"
           defaultValue={q}
-          placeholder="����� �� ������ ��� ������"
+          placeholder="Пошук за назвою або описом"
         />
-        <Button type="submit">������</Button>
+        <Button type="submit">Знайти</Button>
       </form>
       <div className={styles.stack}>
-        {resource.loading && <p role="status">�������������</p>}
+        {resource.loading && <p role="status">Завантаження…</p>}
         {resource.error && (
           <p role="alert">
-            {resource.error} <Button onClick={resource.reload}>���������</Button>
+            {resource.error} <Button onClick={resource.reload}>Повторити</Button>
           </p>
         )}
         {resource.data?.length === 0 && (
-          <Panel title="��� ���� ����">
-            <p>������ ���� ��� ���� ����� ������.</p>
+          <Panel title="Тем поки немає">
+            <p>Створи тему або зміни умови пошуку.</p>
           </Panel>
         )}
         {resource.data?.map((topic) => (
@@ -49,8 +49,8 @@ export default function HomePage({ review = false }) {
             author={topic.author.name}
             title={topic.title}
             description={topic.body}
-            tags={topic.tags.join(' � ')}
-            status={`${topic.comments.length} �������� � ${topic.resolved ? '�������' : '�����������'}`}
+            tags={topic.tags.join(' · ')}
+            status={`${topic.comments.length} відповідей · ${topic.resolved ? 'Вирішено' : 'Обговорення'}`}
             to={`/discussion/${topic.id}`}
           />
         ))}
