@@ -6,3 +6,4 @@ cypress/videos
 docs/**/*.docx
 design/**/*.png
 .husky/_
+server/data/

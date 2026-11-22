@@ -13,15 +13,15 @@ export default function AuthPage({ register = false }) {
       await auth.authenticate(register ? 'register' : 'login', values);
       navigate('/');
     } catch {
-      /* ������� �������� ���. */
+      /* Помилку відображає хук. */
     }
   }
   return (
     <AuthLayout>
-      <h1>{register ? '�������� ������' : '� �����������'}</h1>
+      <h1>{register ? 'Створити акаунт' : 'З поверненням'}</h1>
       <form onSubmit={submit}>
         {register && (
-          <Field id="name" label="���">
+          <Field id="name" label="Ім’я">
             <input
               id="name"
               name="name"
@@ -32,10 +32,10 @@ export default function AuthPage({ register = false }) {
             />
           </Field>
         )}
-        <Field id="email" label="���������� �����">
+        <Field id="email" label="Електронна пошта">
           <input id="email" name="email" type="email" required autoComplete="email" />
         </Field>
-        <Field id="password" label="������">
+        <Field id="password" label="Пароль">
           <input
             id="password"
             name="password"
@@ -48,12 +48,12 @@ export default function AuthPage({ register = false }) {
         </Field>
         {auth.error && <p role="alert">{auth.error}</p>}
         <Button type="submit" disabled={auth.pending}>
-          {auth.pending ? '�������' : register ? '��������������' : '�����'}
+          {auth.pending ? 'Зачекай…' : register ? 'Зареєструватися' : 'Увійти'}
         </Button>
       </form>
       <hr />
       <Button secondary to={register ? '/login' : '/register'}>
-        {register ? '������� �� �����' : '�������� ������'}
+        {register ? 'Перейти до входу' : 'Створити акаунт'}
       </Button>
     </AuthLayout>
   );

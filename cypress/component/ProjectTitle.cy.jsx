@@ -1,7 +1,7 @@
 import ProjectTitle from '../../src/components/ProjectTitle';
 
 describe('ProjectTitle', () => {
-  it('������ ����� ������', () => {
+  it('показує назву проєкту', () => {
     cy.mount(<ProjectTitle />);
     cy.get('h1').should('have.text', 'CritiqueCore');
   });
